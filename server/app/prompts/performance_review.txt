@@ -1,0 +1,4 @@
+Analyze the execution timing scales and memory profiling characteristics of the following {language} snippet.
+Examine big-O complexities, nested looping cycles, heap allocations, and database access routines.
+Code snippet:
+{code}

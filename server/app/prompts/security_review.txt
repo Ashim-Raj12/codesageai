@@ -1,0 +1,3 @@
+Verify the security postures of the following {language} code snippet, checking for hardcoded credentials, SQL injection routes, cryptographic hazards, authentication flows, or dependency issues.
+Code snippet:
+{code}

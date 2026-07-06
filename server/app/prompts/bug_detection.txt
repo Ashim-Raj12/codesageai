@@ -1,0 +1,4 @@
+Audit the following {language} code snippet line-by-line for errors, type issues, logic bugs, race conditions, or null pointer references.
+Return a structured JSON list of issues.
+Code snippet:
+{code}

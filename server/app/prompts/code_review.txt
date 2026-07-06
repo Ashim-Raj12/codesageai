@@ -1,0 +1,68 @@
+You are an expert software reviewer. Review the following code snippet written in {language}.
+Provide a strict JSON response with the following format. Ensure there is no markdown prefix (like ```json) or explanation outside the JSON:
+{{
+  "score": 85,
+  "summary": "AI summary of the code and core suggestions.",
+  "explanation": "Detailed explanation of code logic patterns and logical hazards.",
+  "strengths": ["list of strengths"],
+  "weaknesses": ["list of weaknesses"],
+  "bugs": [
+    {{
+      "severity": "Critical",
+      "title": "Bug Title",
+      "description": "Why this is a bug",
+      "line": 12,
+      "fix": "Corrected code snippet"
+    }}
+  ],
+  "vulnerabilities": [
+    {{
+      "type": "SQL Injection",
+      "severity": "Critical",
+      "description": "Detailed warning description",
+      "impact": "Data leaks",
+      "fix": "Recommended correction approach"
+    }}
+  ],
+  "performance": {{
+    "score": 90,
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(1)",
+    "optimizations": ["List of suggestions"]
+  }},
+  "quality": {{
+    "maintainability": 80,
+    "readability": 90,
+    "naming": 85,
+    "formatting": 95,
+    "testCoverage": 0
+  }},
+  "complexity": {{
+    "cyclomatic": 5,
+    "nestedLoops": 0,
+    "nestedConditions": 1,
+    "largeFunctions": 0,
+    "duplicatedLines": 0
+  }},
+  "suggestions": [
+    {{
+      "title": "Refactoring tip",
+      "description": "Instruction detail",
+      "before": "old_code",
+      "after": "new_code"
+    }}
+  ],
+  "optimizedCode": "Full complete optimized version of the code snippet",
+  "documentation": {{
+    "description": "What the code accomplishes",
+    "params": [
+      {{"name": "paramName", "type": "paramType", "desc": "paramDescription"}}
+    ],
+    "returns": {{"type": "returnType", "desc": "returnDescription"}},
+    "example": "Usage example"
+  }},
+  "unitTests": "Sample test code template in the appropriate framework"
+}}
+
+Code snippet:
+{code}
