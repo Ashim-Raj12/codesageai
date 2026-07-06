@@ -8,8 +8,7 @@ import {
   User,
   Settings,
   Code2,
-  HelpCircle,
-  BookOpen
+  HelpCircle
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
@@ -20,17 +19,16 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ className, onItemClick }) => {
   const menuItems = [
-    { label: 'Overview', to: '/dashboard', icon: LayoutDashboard, end: true },
-    { label: 'Code Analyzer', to: '/dashboard/analyzer', icon: Code },
-    { label: 'Analysis History', to: '/dashboard/history', icon: History },
+    { label: 'Dashboard', to: '/dashboard', icon: LayoutDashboard, end: true },
+    { label: 'New Analysis', to: '/dashboard/analyzer', icon: Code },
+    { label: 'History', to: '/dashboard/history', icon: History },
     { label: 'Saved Reports', to: '/dashboard/reports', icon: Bookmark },
-    { label: 'Developer Profile', to: '/dashboard/profile', icon: User },
+    { label: 'Profile', to: '/dashboard/profile', icon: User },
     { label: 'Settings', to: '/dashboard/settings', icon: Settings },
   ];
 
   const subItems = [
-    { label: 'Documentation', to: 'https://docs.codesage.ai', icon: BookOpen, external: true },
-    { label: 'Help & Support', to: 'mailto:support@codesage.ai', icon: HelpCircle, external: true },
+    { label: 'Support', to: 'mailto:support@codesage.ai', icon: HelpCircle, external: true },
   ];
 
   return (

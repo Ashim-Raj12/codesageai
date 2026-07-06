@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { X, Code2 } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SignedIn, SignedOut } from '@clerk/clerk-react';
 
 interface LinkItem {
   label: string;
@@ -76,16 +77,25 @@ export const MobileNav: React.FC<MobileNavProps> = ({
 
             {/* Bottom Actions */}
             <div className="flex flex-col gap-3 mt-auto">
-              <Link to="/login" onClick={onClose}>
-                <Button variant="outline" className="w-full">
-                  Log in
-                </Button>
-              </Link>
-              <Link to="/signup" onClick={onClose}>
-                <Button variant="primary" className="w-full">
-                  Get Started
-                </Button>
-              </Link>
+              <SignedOut>
+                <Link to="/login" onClick={onClose}>
+                  <Button variant="outline" className="w-full">
+                    Log in
+                  </Button>
+                </Link>
+                <Link to="/signup" onClick={onClose}>
+                  <Button variant="primary" className="w-full">
+                    Get Started
+                  </Button>
+                </Link>
+              </SignedOut>
+              <SignedIn>
+                <Link to="/dashboard" onClick={onClose}>
+                  <Button variant="primary" className="w-full">
+                    Go to Dashboard
+                  </Button>
+                </Link>
+              </SignedIn>
             </div>
           </motion.div>
         </>

@@ -4,6 +4,7 @@ import { Code2, Menu } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { ThemeToggle } from './ThemeToggle';
 import { MobileNav } from './MobileNav';
+import { SignedIn, SignedOut } from '@clerk/clerk-react';
 
 export const Navbar: React.FC = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -42,19 +43,27 @@ export const Navbar: React.FC = () => {
           ))}
         </nav>
 
-        {/* Action Buttons */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <Link to="/login">
-            <Button variant="ghost" size="sm">
-              Log in
-            </Button>
-          </Link>
-          <Link to="/signup">
-            <Button variant="primary" size="sm">
-              Get Started
-            </Button>
-          </Link>
+          <SignedOut>
+            <Link to="/login">
+              <Button variant="ghost" size="sm">
+                Log in
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button variant="primary" size="sm">
+                Get Started
+              </Button>
+            </Link>
+          </SignedOut>
+          <SignedIn>
+            <Link to="/dashboard">
+              <Button variant="primary" size="sm">
+                Go to Dashboard
+              </Button>
+            </Link>
+          </SignedIn>
         </div>
 
         {/* Mobile Nav Button */}
