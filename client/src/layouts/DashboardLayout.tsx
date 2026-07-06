@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { Sidebar } from '../components/layout/Sidebar';
 import { SearchBar } from '../components/layout/SearchBar';
 import { ThemeToggle } from '../components/layout/ThemeToggle';
 import { UserMenu } from '../components/layout/UserMenu';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Bell } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const DashboardLayout: React.FC = () => {
@@ -69,9 +69,20 @@ export const DashboardLayout: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <Link
+              to="/dashboard/notifications"
+              className="relative p-2 rounded-lg text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all cursor-pointer"
+              aria-label="View notifications"
+            >
+              <Bell className="h-4.5 w-4.5" />
+              <span className="absolute top-1.5 right-1.5 flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+              </span>
+            </Link>
             <ThemeToggle />
-            <div className="h-6 w-px bg-zinc-200 dark:bg-zinc-800" />
+            <div className="h-6 w-px bg-zinc-200 dark:bg-zinc-800 mx-1" />
             <UserMenu />
           </div>
         </header>

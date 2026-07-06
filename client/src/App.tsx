@@ -19,6 +19,8 @@ import { AnalysisHistoryPage } from './pages/history/AnalysisHistoryPage';
 import { SavedReportsPage } from './pages/reports/SavedReportsPage';
 import { ProfilePage } from './pages/profile/ProfilePage';
 import { SettingsPage } from './pages/settings/SettingsPage';
+import { RecentActivityPage } from './pages/dashboard/RecentActivityPage';
+import { NotificationsPage } from './pages/dashboard/NotificationsPage';
 import { UnauthorizedPage } from './pages/UnauthorizedPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
@@ -64,6 +66,8 @@ function App() {
                 <Route path="reports" element={<SavedReportsPage />} />
                 <Route path="profile" element={<ProfilePage />} />
                 <Route path="settings" element={<SettingsPage />} />
+                <Route path="activity" element={<RecentActivityPage />} />
+                <Route path="notifications" element={<NotificationsPage />} />
               </Route>
 
               {/* Security block routing */}
